@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin: 'war'
+//apply plugin: 'eclipse-wtp' // 버그 있는거 같음... refresh 하면 프로젝트가 아작나는데... 일단 막아놓자 -_-;
+ 
+version = '1.0'
+ 
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+ 
+compileJava.options.encoding = 'UTF-8'
+ 
+repositories {
+    mavenCentral()
+}
+ 
+dependencies {
+ 
+    compile 'javax.servlet:javax.servlet-api:3.0.1'
+    compile 'org.slf4j:slf4j-api:1.7.18'
+    //compile 'javax.el:javax.el-api:3.0.0'
+    compile 'javax.servlet:jstl:1.2'
+     
+}
