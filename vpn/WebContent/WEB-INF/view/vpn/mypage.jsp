@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+
+<jsp:useBean id="URL" class="com.haebi.config.URL" />
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -12,5 +13,6 @@
 <c:if test="${not empty message}">
     <h1>${message}</h1>
 </c:if>
+<p><a href="<%=URL.MakeURL(request, URL.LOGIN) %>">∏ﬁ¿Œ</a></p> 
 </body>
 </html>

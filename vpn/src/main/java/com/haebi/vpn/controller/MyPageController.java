@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/mypage")
+import com.haebi.config.URL;
+
+@WebServlet(URL.MYPAGE_CTRL)
 public class MyPageController extends HttpServlet{
 
 	/**
