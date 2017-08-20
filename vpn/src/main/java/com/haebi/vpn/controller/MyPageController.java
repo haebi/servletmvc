@@ -23,13 +23,13 @@ public class MyPageController extends HttpServlet{
 	{
 		System.out.println("doGet");
 		
-		// º¸³¾ º¯¼ö °ª ¼¼ÆÃ
+		// ë³´ë‚¼ ë³€ìˆ˜ ê°’ ì„¸íŒ…
 		String strMsg = "HaHaHa";
 		
-		// º¯¼ö¸¦ ´ã¾Æ¼­
+		// ë³€ìˆ˜ë¥¼ ë‹´ì•„ì„œ
 		request.setAttribute("message", strMsg);
 		
-		// ÁöÁ¤µÈ ºä¿¡ ½Ç¾î º¸³½´Ù
+		// ì§€ì •ëœ ë·°ì— ì‹¤ì–´ ë³´ë‚¸ë‹¤
 		request.getRequestDispatcher("/WEB-INF/view/vpn/mypage.jsp").forward(request, response);
 	}
 	

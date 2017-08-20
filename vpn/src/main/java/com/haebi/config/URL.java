@@ -1,14 +1,14 @@
 /*
- * sendRedirect È£Ãâ ¿¹
+ * sendRedirect í˜¸ì¶œ ì˜ˆ
  * response.sendRedirect(URL.MakeURL(request, URL.LOGIN));
  * 
- * BASE_ADDR ¼³Á¤ ¾È³»
- * Tomcat ´Üµ¶ ÀÌ¿ë ½Ã : "" À¸·Î ¼³Á¤ÇÕ´Ï´Ù.
- * Nginx ÇÁ·Ï½Ã ÀÌ¿ë ½Ã : Nginx ÇÁ·Ï½Ã ¿¡ ¼³Á¤µÈ °æ·Î ¸¦ ÀÔ·ÂÇÕ´Ï´Ù.
- * - ¿¹) Nginx ÇÁ·Ï½Ã ¼³Á¤ÀÌ /wa ·Î, /wa ÇÏ´ÜÀÇ ¸ğµç ¿¬°áÀ» tomcat À¸·Î µ¹·Á³õÀº °æ¿ì,
- *      WAS ¿¡¼­ ÀÎ½ÄÇÏ´Â request.getContextPath() °¡ /vpn ÀÌ¶ó°í °¡Á¤ÇÏ¸é ½ÇÁ¦ °æ·Î´Â http://domain/wa/vpn ÀÌ µË´Ï´Ù.
- *      ±×·¯³ª, request.getContextPath() °¡ °¡Á®¿À´Â °æ·Î´Â tomcat ÀÚ½Å ±âÁØÀ¸·Î ÇöÀç À§Ä¡¸¦ ±¸ÇÏ¿© http://domain/vpn ÀÌ µÇ¾î¹ö¸³´Ï´Ù.
- *      ÀÌ ¹®Á¦¸¦ ÇØ°áÇÏ±â À§ÇØ BASE_ADDRÀ» ´õÇÏ¿© ÀÌ Â÷ÀÌ¸¦ º¸Á¤ÇÕ´Ï´Ù.
+ * BASE_ADDR ì„¤ì • ì•ˆë‚´
+ * Tomcat ë‹¨ë… ì´ìš© ì‹œ : "" ìœ¼ë¡œ ì„¤ì •í•©ë‹ˆë‹¤.
+ * Nginx í”„ë¡ì‹œ ì´ìš© ì‹œ : Nginx í”„ë¡ì‹œ ì— ì„¤ì •ëœ ê²½ë¡œ ë¥¼ ì…ë ¥í•©ë‹ˆë‹¤.
+ * - ì˜ˆ) Nginx í”„ë¡ì‹œ ì„¤ì •ì´ /wa ë¡œ, /wa í•˜ë‹¨ì˜ ëª¨ë“  ì—°ê²°ì„ tomcat ìœ¼ë¡œ ëŒë ¤ë†“ì€ ê²½ìš°,
+ *      WAS ì—ì„œ ì¸ì‹í•˜ëŠ” request.getContextPath() ê°€ /vpn ì´ë¼ê³  ê°€ì •í•˜ë©´ ì‹¤ì œ ê²½ë¡œëŠ” http://domain/wa/vpn ì´ ë©ë‹ˆë‹¤.
+ *      ê·¸ëŸ¬ë‚˜, request.getContextPath() ê°€ ê°€ì ¸ì˜¤ëŠ” ê²½ë¡œëŠ” tomcat ìì‹  ê¸°ì¤€ìœ¼ë¡œ í˜„ì¬ ìœ„ì¹˜ë¥¼ êµ¬í•˜ì—¬ http://domain/vpn ì´ ë˜ì–´ë²„ë¦½ë‹ˆë‹¤.
+ *      ì´ ë¬¸ì œë¥¼ í•´ê²°í•˜ê¸° ìœ„í•´ BASE_ADDRì„ ë”í•˜ì—¬ ì´ ì°¨ì´ë¥¼ ë³´ì •í•©ë‹ˆë‹¤.
 */
 
 package com.haebi.config;
@@ -16,22 +16,22 @@ package com.haebi.config;
 import javax.servlet.http.HttpServletRequest;
 
 public class URL {
-	// ±âº» ÁÖ¼Ò
-	public static final String BASE_ADDR			= "";	// tomcat ´Üµ¶ ÀÌ¿ë½Ã "" À¸·Î ¼³Á¤ÇÕ´Ï´Ù. | Nginx ÇÁ·Ï½Ã ÀÌ¿ë ½Ã ÇÁ·Ï½Ã ¼³Á¤ °æ·Î¸¦ ÀÔ·ÂÇÕ´Ï´Ù. "/wa"
+	// ê¸°ë³¸ ì£¼ì†Œ
+	public static final String BASE_ADDR			= "";	// tomcat ë‹¨ë… ì´ìš©ì‹œ "" ìœ¼ë¡œ ì„¤ì •í•©ë‹ˆë‹¤. | Nginx í”„ë¡ì‹œ ì´ìš© ì‹œ í”„ë¡ì‹œ ì„¤ì • ê²½ë¡œë¥¼ ì…ë ¥í•©ë‹ˆë‹¤. "/wa"
 	
-	// ÇÊÅÍ ¼³Á¤
+	// í•„í„° ì„¤ì •
 	public static final String AUTH_AUTHFILTER 		= "/auth/*";
 	
-	// ¼­ºí¸´ ¼³Á¤
+	// ì„œë¸”ë¦¿ ì„¤ì •
 	public static final String AUTH_LOGINCTRL 		= "/login";
 	public static final String AUTH_LOGOUTCTRL 		= "/logout";
 	public static final String MYPAGE_CTRL 			= "/auth/mypage";
 	public static final String TEST_LISTDATACTRL 	= "/listdata";
 	
-	// ±âÅ¸ ¼³Á¤
+	// ê¸°íƒ€ ì„¤ì •
 	public static final String LOGIN 				= "/";
 	
-	// URL »ı¼º
+	// URL ìƒì„±
 	public static String MakeURL(HttpServletRequest request, String URL)
 	{
 		return BASE_ADDR + request.getContextPath() + URL;

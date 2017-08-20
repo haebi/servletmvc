@@ -32,25 +32,25 @@ public class AuthFilter implements Filter {
 		HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
         
-        /* () or true : Á¸ÀçÇÏÁö ¾Ê´Â ¼¼¼Ç »ı¼º 
-         * false : Á¸ÀçÇÏÁö ¾Ê´Â ¼¼¼Ç¿¡ ´ëÇØ null ¹İÈ¯
+        /* () or true : ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ì„¸ì…˜ ìƒì„± 
+         * false : ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ì„¸ì…˜ì— ëŒ€í•´ null ë°˜í™˜
          * */
         //HttpSession session = request.getSession(false);
         HttpSession session = request.getSession();
         
-        // ¼¼¼ÇÁ¤º¸¿¡ id °¡ ÀÖ´ÂÁö °Ë»ç
+        // ì„¸ì…˜ì •ë³´ì— id ê°€ ìˆëŠ”ì§€ ê²€ì‚¬
         if (session.getAttribute("id") != null)
         {
         	System.out.println("AuthFilter - Ok");
         	
-        	// Á¶°Ç¿¡ Åë°úÇÑ °æ¿ì, ´ÙÀ½ ÇÊÅÍ¸¦ È£ÃâÇÑ´Ù. (Ãß°¡ ÇÊÅÍ°¡ ¾ø´Â °æ¿ì ¿äÃ»À» ¹Ş´Â³ğÀÌ µ¿ÀÛÇÑ´Ù)
+        	// ì¡°ê±´ì— í†µê³¼í•œ ê²½ìš°, ë‹¤ìŒ í•„í„°ë¥¼ í˜¸ì¶œí•œë‹¤. (ì¶”ê°€ í•„í„°ê°€ ì—†ëŠ” ê²½ìš° ìš”ì²­ì„ ë°›ëŠ”ë†ˆì´ ë™ì‘í•œë‹¤)
         	chain.doFilter(request, response);
         }
         else
         {
         	System.out.println("AuthFilter - Fail");
         	
-        	// ·Î±×ÀÎ È­¸éÀ¸·Î °­Á¦ ¼ÛÈ¯
+        	// ë¡œê·¸ì¸ í™”ë©´ìœ¼ë¡œ ê°•ì œ ì†¡í™˜
         	response.sendRedirect(URL.MakeURL(request, URL.LOGIN));
         }
 	}

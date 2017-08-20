@@ -20,7 +20,7 @@ public class LoginController extends HttpServlet{
 	 */
 	private static final long serialVersionUID = -7753965989577474315L;
 	
-	// ÀÎ½ºÅÏ½º »ı¼º
+	// ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
 	AuthService as = new AuthService();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
@@ -39,17 +39,17 @@ public class LoginController extends HttpServlet{
 		
 		//System.out.println(id + " / " + pw);
 
-		// ·Î±×ÀÎ ÀÎÁõ!
+		// ë¡œê·¸ì¸ ì¸ì¦!
 		if(as.IsAuth(id, pw))
 		{
 			System.out.println("auth ok - add seddion : id");
 			
-			// ·Î±×ÀÎ ¼º°ø. ¼¼¼Ç ¼³Á¤.
+			// ë¡œê·¸ì¸ ì„±ê³µ. ì„¸ì…˜ ì„¤ì •.
 			HttpSession session = request.getSession();
 			session.setAttribute("id", id);
 			
-			// ·Î±×ÀÎ ¼º°ø ½Ã ÆäÀÌÁö ¸®´ÙÀÌ·º¼Ç
-			// µğ½ºÆĞÃ³·Î ÀÌµ¿ÇÏ¸é »ó´ÜÀÇ ÁÖ¼Ò°¡ ¹Ù²îÁö ¾Ê´Â´Ù.
+			// ë¡œê·¸ì¸ ì„±ê³µ ì‹œ í˜ì´ì§€ ë¦¬ë‹¤ì´ë ‰ì…˜
+			// ë””ìŠ¤íŒ¨ì²˜ë¡œ ì´ë™í•˜ë©´ ìƒë‹¨ì˜ ì£¼ì†Œê°€ ë°”ë€Œì§€ ì•ŠëŠ”ë‹¤.
 			//request.getRequestDispatcher("/WEB-INF/view/vpn/mypage.jsp").forward(request, response);
 			//response.sendRedirect(URL.MakeURL(request, URL.LOGIN));
 		}
@@ -57,7 +57,7 @@ public class LoginController extends HttpServlet{
 		{
 			System.out.println("auth fail - session clear");
 			
-			// ·Î±×ÀÎ ½ÇÆĞ.
+			// ë¡œê·¸ì¸ ì‹¤íŒ¨.
 			HttpSession session = request.getSession();
 			session.invalidate();
 		}

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <jsp:useBean id="URL" class="com.haebi.config.URL" />
@@ -6,11 +6,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<p>Servlet MVC ¿¬½À ÆäÀÌÁö ÀÔ´Ï´Ù. ID/PW (qqq/www) ÀÔ´Ï´Ù.</p>
+<p>Servlet MVC ì—°ìŠµ í˜ì´ì§€ ì…ë‹ˆë‹¤. ID/PW (qqq/www) ì…ë‹ˆë‹¤.</p>
 <%=(String)session.getAttribute("id") %>
 <c:choose>
 
@@ -37,7 +37,7 @@
 	
 	<c:otherwise>
 <hr />
-<p>·Î±×ÀÎ ¾ÆÀÌµğ : <c:out value="${id}" /></p>
+<p>ë¡œê·¸ì¸ ì•„ì´ë”” : <c:out value="${id}" /></p>
 <p><a href="logout">Logout</a></p>
 <hr />
 	</c:otherwise>
@@ -45,8 +45,8 @@
 </c:choose>
 
 <p></p>
-<p>/login (post, ÀÎÁõ ¼öÇà)</p>
-<p><a href="auth/mypage">auth/mypage</a> (·Î±×ÀÎ ÈÄ ÀÌµ¿ °¡´É)</p>
+<p>/login (post, ì¸ì¦ ìˆ˜í–‰)</p>
+<p><a href="auth/mypage">auth/mypage</a> (ë¡œê·¸ì¸ í›„ ì´ë™ ê°€ëŠ¥)</p>
 <p><a href="listdata">listdata</a></p>
 <hr />
 

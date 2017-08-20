@@ -4,7 +4,7 @@ public class AuthDao {
 
 	public boolean IsAuth(String id, String pw)
 	{
-		// DB¿¬°á Ã³¸®´Â ³ªÁß¿¡ ±¸Çö
+		// DBì—°ê²° ì²˜ë¦¬ëŠ” ë‚˜ì¤‘ì— êµ¬í˜„
 		if ("qqq".equals(id) && "www".equals(pw)) {
 			return true;
 		}

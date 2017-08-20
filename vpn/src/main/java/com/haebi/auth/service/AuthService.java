@@ -6,8 +6,8 @@ public class AuthService {
 	
 	AuthDao authDao = new AuthDao();
 	
-	// 牢刘 荐青. 搬苞 府畔.
-	// 己傍 : True
+	// 鞚胳 靾橅枆. 瓴瓣臣 毽劥.
+	// 靹标车 : True
 	public boolean IsAuth(String id, String pw)
 	{
 		return authDao.IsAuth(id, pw);

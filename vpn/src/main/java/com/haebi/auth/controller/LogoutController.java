@@ -38,11 +38,11 @@ public class LogoutController extends HttpServlet{
 	private void logout(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException
 	{
-		// ¼¼¼Ç Á¦°Å
+		// ì„¸ì…˜ ì œê±°
 		HttpSession session = request.getSession();
 		session.invalidate();
 		
-		// ·Î±×ÀÎ ÆäÀÌÁö·Î ¸®ÅÏ
+		// ë¡œê·¸ì¸ í˜ì´ì§€ë¡œ ë¦¬í„´
 		response.sendRedirect(URL.MakeURL(request, URL.LOGIN));
 	}
 }
