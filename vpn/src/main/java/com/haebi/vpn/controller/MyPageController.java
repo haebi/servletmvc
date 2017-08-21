@@ -28,6 +28,7 @@ public class MyPageController extends HttpServlet{
 		
 		// 변수를 담아서
 		request.setAttribute("message", strMsg);
+		request.setAttribute("url_login", URL.MakeURL(request, URL.LOGIN));
 		
 		// 지정된 뷰에 실어 보낸다
 		request.getRequestDispatcher("/WEB-INF/view/vpn/mypage.jsp").forward(request, response);

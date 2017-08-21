@@ -1,6 +1,6 @@
 apply plugin: 'java'
 apply plugin: 'war'
-//apply plugin: 'eclipse-wtp' // ¹ö±× ÀÖ´Â°Å °°À½... refresh ÇÏ¸é ÇÁ·ÎÁ§Æ®°¡ ¾ÆÀÛ³ª´Âµ¥... ÀÏ´Ü ¸·¾Æ³õÀÚ -_-;
+//apply plugin: 'eclipse-wtp' // ë²„ê·¸ ìˆëŠ”ê±° ê°™ìŒ... refresh í•˜ë©´ í”„ë¡œì íŠ¸ê°€ ì•„ì‘ë‚˜ëŠ”ë°... ì¼ë‹¨ ë§‰ì•„ë†“ì -_-;
  
 version = '1.0'
  

@@ -8,6 +8,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style>
+.footer {
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+</style>
 </head>
 <body>
 <p>Servlet MVC 연습 페이지 입니다. ID/PW (qqq/www) 입니다.</p>
@@ -49,6 +55,10 @@
 <p><a href="auth/mypage">auth/mypage</a> (로그인 후 이동 가능)</p>
 <p><a href="listdata">listdata</a></p>
 <hr />
+<p class="footer">GIT <a href="https://github.com/haebi/servletmvc" target="_blank">https://github.com/haebi/servletmvc</a>
+ . WEB <a href="http://haebi.kr" target="_blank">http://haebi.kr</a>
+ . jiggly2k@gmail.com
+</p>
 
 </body>
 </html>

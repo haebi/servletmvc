@@ -28,6 +28,7 @@ public class ListDataController extends HttpServlet{
 						
 		// 변수를 담아서
 		request.setAttribute("datadata", lds.getListData());
+		request.setAttribute("url_login", URL.MakeURL(request, URL.LOGIN));
 		
 		// 지정된 뷰에 실어 보낸다
 		request.getRequestDispatcher("/WEB-INF/view/test/listdata.jsp").forward(request, response);
